@@ -58,7 +58,7 @@ BOOL CRegKeyImpl::CreateKey(RootKeyType rk, LPTSTR subkey)
 		hRoot = HKEY_CURRENT_CONFIG;
 		break;
 	}
-	LOpenStatus = RegCreateKeyEx(hRoot, subkey, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS | KEY_WRITE | KEY_EXECUTE | KEY_READ | KEY_SET_VALUE, NULL, &m_hKey, NULL);
+	LOpenStatus = RegCreateKeyEx(hRoot, subkey, 0, NULL, REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS | KEY_WRITE | KEY_EXECUTE | KEY_READ | KEY_SET_VALUE|KEY_WOW64_64KEY , NULL, &m_hKey, NULL);
 	return LOpenStatus == ERROR_SUCCESS;
 }
 
